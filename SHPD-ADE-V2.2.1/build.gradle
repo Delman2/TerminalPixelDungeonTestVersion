@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+            maven{ url 'https://maven.aliyun.com/repository/google' } 
+         maven{ url 'https://maven.aliyun.com/repository/jcenter'}
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        //the R8 version bundled with AGP 8.1.0+ causes crashes on very old Android versions
+        classpath 'com.android.tools.build:gradle:8.2.2'
+    }
+}
+
+allprojects {
+
+    ext {
+        appName = '终端地牢'
+        //请修改默认名字↑ 和 包名↓，包名不要出现中文，建议x.x.x.x
+        appPackageName = 'com.shatteredpixel.caliniya'
+
+        appVersionCode = 754
+        appVersionName = '2.2.1'
+
+        appJavaCompatibility = JavaVersion.VERSION_1_8
+
+        appAndroidCompileSDK = 33
+        appAndroidMinSDK = 16
+        appAndroidTargetSDK = 33
+
+        gdxVersion = '1.11.0'
+        gdxControllersVersion = '2.2.4-SNAPSHOT'
+    }
+    version = appVersionName
+
+    repositories {
+            maven{ url 'https://maven.aliyun.com/repository/google' } 
+         maven{ url 'https://maven.aliyun.com/repository/jcenter'}
+        google()
+        mavenCentral()
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    }
+
+}

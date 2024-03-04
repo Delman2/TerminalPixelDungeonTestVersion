@@ -1,0 +1,18 @@
+//core game code modules
+include ':SPD-classes'
+include ':core'
+
+//platform modules
+include ':android'
+
+//由于ADE无法构建桌面端，故而注释，如果你后续有电脑，请去掉注释方可构建
+//include ':desktop'
+
+//service modules
+include ':services'
+    //updates
+    include ':services:updates:debugUpdates'
+    include ':services:updates:githubUpdates'
+    //news
+    include ':services:news:debugNews'
+    include ':services:news:shatteredNews'

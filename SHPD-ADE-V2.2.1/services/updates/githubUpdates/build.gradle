@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+sourceCompatibility = targetCompatibility = appJavaCompatibility
+
+dependencies {
+    implementation project(':SPD-classes')
+    api project(':services')
+}
